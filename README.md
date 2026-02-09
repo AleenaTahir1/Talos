@@ -8,23 +8,12 @@ Experience AI with a polished, responsive interface that adapts to your preferen
 
 ---
 
-## Features
-
-### Local Privacy
-Powered by Ollama, Talos runs offline. Your data never leaves your device, providing complete privacy and security for your conversations.
-
-### Adaptive Design
-Choose from distinct visual themes to match your environment:
-
-*   **Retro**: A pixel-art interface inspired by classic computing.
-*   **Bubbly**: A soft, approachable design with rounded aesthetics.
-*   **Glass**: A modern, translucent interface using glassmorphism.
-*   **Minimal**: A distraction-free, high-contrast dark mode.
-
-### Enhanced Interaction
-*   **Rich Text Support**: Full Markdown rendering for code blocks, lists, and formatted text.
-*   **Contextual Editing**: Edit previous messages to diverge the conversation path. The AI automatically regenerates responses based on the updated context.
-*   **Session Management**: Organize, save, and switch between multiple conversation threads seamlessly.
+*   **Local Privacy**: Powered by Ollama, running entirely offline for complete data security.
+*   **Multi-Theme UI**: Includes Retro, Bubbly, Glass, and Minimal themes.
+*   **Markdown Rendering**: Full support for code blocks, lists, and rich text formatting.
+*   **Message Editing**: Edit previous user messages to diverge conversation paths with automatic AI regeneration.
+*   **Session Management**: Create, save, and switch between multiple conversation threads.
+*   **Cross-Platform**: Native performance on Windows, macOS, and Linux via Tauri.
 
 ---
 
