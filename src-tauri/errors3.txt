@@ -1,0 +1,36 @@
+﻿cargo :     Blocking 
+waiting for file 
+lock on build 
+directory
+At line:1 char:1
++ cargo check 2>&1 | 
+Out-File -FilePath 
+errors3.txt 
+-Encoding utf8
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (    Blo   
+ cking wa...build    
+ directory:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+    Checking sage 
+v0.1.0 (C:\Users\alee
+n\OneDrive\Desktop\Ne
+w folder\sage\src-tau
+ri)
+error: failed to 
+write to `C:\Users\al
+een\OneDrive\Desktop\
+New folder\sage\src-t
+auri\target\debug\dep
+s\rmetaiG3tAD\full.rm
+eta`: There is not 
+enough space on the 
+disk. (os error 112)
+

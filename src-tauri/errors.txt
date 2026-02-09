@@ -1,0 +1,51 @@
+﻿cargo :     Checking 
+sage v0.1.0 (C:\Users
+\aleen\OneDrive\Deskt
+op\New folder\sage\sr
+c-tauri)
+At line:1 char:1
++ cargo check --messa
+ge-format=short 2>&1 
+| Out-File -FilePath 
+errors.t ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (    Che   
+ cking sa...sage\    
+src-tauri):Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+src\lib.rs:51:14: 
+error[E0255]: the 
+name 
+`__cmd__list_models` 
+is defined multiple 
+times: 
+`__cmd__list_models` 
+reimported here
+src\lib.rs:75:14: 
+error[E0255]: the 
+name `__cmd__check_ol
+lama_status` is 
+defined multiple 
+times: `__cmd__check_
+ollama_status` 
+reimported here
+src\lib.rs:87:14: 
+error[E0255]: the 
+name `__cmd__send_cha
+t_message` is 
+defined multiple 
+times: `__cmd__send_c
+hat_message` 
+reimported here
+error: could not 
+compile `sage` (lib) 
+due to 3 previous 
+errors

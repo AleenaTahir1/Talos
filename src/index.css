@@ -1,0 +1,234 @@
+/* Import NES.css for retro theme */
+@import 'nes.css/css/nes.min.css';
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&family=Press+Start+2P&family=Comic+Neue:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.6);
+}
+
+/* NES.css overrides for our retro theme */
+.nes-container {
+  padding: 0.5rem 1rem !important;
+}
+
+/* Markdown Styles */
+.markdown-content p {
+  margin-bottom: 0.5em;
+}
+.markdown-content p:last-child {
+  margin-bottom: 0;
+}
+.markdown-content ul, .markdown-content ol {
+  margin-left: 1.5em;
+  list-style-type: disc;
+  margin-bottom: 0.5em;
+}
+.markdown-content ol {
+  list-style-type: decimal;
+}
+.markdown-content li {
+  margin-bottom: 0.25em;
+}
+.markdown-content strong {
+  font-weight: 600;
+}
+.markdown-content em {
+  font-style: italic;
+}
+.markdown-content code {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+.markdown-content pre {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 0.5em;
+}
+.markdown-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+.markdown-content a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Retro Markdown adj */
+.retro-markdown code {
+  background-color: transparent; 
+  border: 1px dashed currentColor;
+}
+.retro-markdown pre {
+  border: 2px solid currentColor;
+  background-color: rgba(0,0,0,0.2);
+}
+
+/* Retro theme specific styles */
+.theme-retro {
+  image-rendering: pixelated;
+}
+
+.theme-retro .nes-balloon {
+  margin: 0 !important;
+  padding: 8px 12px !important;
+}
+
+/* Bubbly theme specific styles */
+.theme-bubbly {
+  background: linear-gradient(135deg, #fef7ff 0%, #fff5f8 50%, #f0f7ff 100%);
+}
+
+.theme-bubbly .message-bubble {
+  box-shadow: 0 2px 12px rgba(232, 121, 160, 0.15);
+}
+
+/* Glass theme specific styles */
+.theme-glass {
+  background: radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+    #0a0a0f;
+}
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), inset 0 0 20px rgba(0, 212, 255, 0.05);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.4), inset 0 0 30px rgba(139, 92, 246, 0.08);
+  }
+}
+
+.theme-glass .glow-effect {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+
+  0%,
+  100% {
+    border-color: rgba(0, 212, 255, 0.4);
+  }
+
+  50% {
+    border-color: rgba(139, 92, 246, 0.5);
+  }
+}
+
+.theme-glass .border-glow {
+  animation: borderGlow 4s ease-in-out infinite;
+}
+
+/* Minimal theme specific styles */
+.theme-minimal {
+  background: #1a1b26;
+}
+
+/* Typing indicator animation */
+@keyframes typing {
+
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-4px);
+  }
+}
+
+.typing-dot {
+  animation: typing 1s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Pixel border helper for retro theme */
+.pixel-border {
+  box-shadow:
+    inset -4px -4px #1a1a1a,
+    inset 4px 4px #6a6a6a,
+    inset -8px -8px #3a3a3a,
+    inset 8px 8px #5a5a5a;
+}
+
+/* Soft shadow for bubbly/minimal */
+.soft-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Glass effect */
+.glass-effect {
+  background: rgba(20, 20, 35, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient border for glass theme */
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #00d4ff, #8b5cf6);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
