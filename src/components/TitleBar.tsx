@@ -106,18 +106,27 @@ export function TitleBar() {
             }}
         >
             {/* App Title */}
-            <span
-                data-tauri-drag-region
-                style={{
-                    fontSize: isRetro ? '10px' : '13px',
-                    fontWeight: '600',
-                    color: currentTheme.colors.textSecondary,
-                    fontFamily: currentTheme.fontFamily,
-                    letterSpacing: isRetro ? '0' : '0.02em',
-                }}
-            >
-                {isRetro ? '> TALOS v1.0' : 'Talos'}
-            </span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <svg width={iconSize + 4} height={iconSize + 4} viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M30 80 Q30 30 100 30 Q170 30 170 80 Q170 120 130 130 L130 160 L100 130 Q30 130 30 80 Z" fill="#209cee" stroke="#fff" strokeWidth="4" />
+                    <circle cx="70" cy="80" r="10" fill="#fff" />
+                    <circle cx="100" cy="80" r="10" fill="#fff" />
+                    <circle cx="130" cy="80" r="10" fill="#fff" />
+                    <path d="M60 100 Q100 130 140 100" fill="none" stroke="#fff" strokeWidth="15" strokeLinecap="round" />
+                </svg>
+                <span
+                    data-tauri-drag-region
+                    style={{
+                        fontSize: isRetro ? '10px' : '13px',
+                        fontWeight: '600',
+                        color: currentTheme.colors.textSecondary,
+                        fontFamily: currentTheme.fontFamily,
+                        letterSpacing: isRetro ? '0' : '0.02em',
+                    }}
+                >
+                    {isRetro ? '> TALOS v1.0' : 'Talos'}
+                </span>
+            </div>
 
             {/* Window Controls */}
             <div style={{ display: 'flex', gap: isRetro ? '4px' : '6px' }}>
