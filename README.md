@@ -1,51 +1,86 @@
-# Talos (formerly Sage)
+# Talos
 
-Talos is a modern, locally-running AI chat application built with **Tauri**, **React**, and **Ollama**. It features a polished UI with multiple themes (Retro, Bubbly, Glass, Minimal) and completely local privacy.
+## Private, Local AI Companion
+
+Talos is a modern, privacy-first AI chat application designed for performance and aesthetic control. Built on the Tauri framework and powered by Ollama, it runs entirely on your local machine, ensuring your conversations remain private, fast, and secure.
+
+Experience AI with a polished, responsive interface that adapts to your preference with widely varied built-in themes.
+
+---
 
 ## Features
 
--   **Local AI**: Powered by Ollama, running entirely on your machine.
--   **Multiple Themes**: Switch between Retro (pixel art), Bubbly (soft pastels), Glass (futuristic), and Minimal styles.
--   **Markdown Support**: Full support for code blocks, lists, and formatted text.
--   **Conversation Management**: Create, delete, and switch between multiple chat sessions.
--   **Edit & Regenerate**: Edit your previous prompts to steer the conversation in a new direction.
--   **Cross-Platform**: Built with Tauri for native performance on Windows, macOS, and Linux.
+### Local Privacy
+Powered by Ollama, Talos runs offline. Your data never leaves your device, providing complete privacy and security for your conversations.
 
-## Tech Stack
+### Adaptive Design
+Choose from distinct visual themes to match your environment:
 
--   **Frontend**: React, TypeScript, Vite
--   **Backend**: Rust (Tauri)
--   **Database**: SQLite (local storage)
--   **AI Engine**: Ollama
+*   **Retro**: A pixel-art interface inspired by classic computing.
+*   **Bubbly**: A soft, approachable design with rounded aesthetics.
+*   **Glass**: A modern, translucent interface using glassmorphism.
+*   **Minimal**: A distraction-free, high-contrast dark mode.
 
-## Prerequisites
+### Enhanced Interaction
+*   **Rich Text Support**: Full Markdown rendering for code blocks, lists, and formatted text.
+*   **Contextual Editing**: Edit previous messages to diverge the conversation path. The AI automatically regenerates responses based on the updated context.
+*   **Session Management**: Organize, save, and switch between multiple conversation threads seamlessly.
 
--   [Bun](https://bun.sh/) or [Node.js](https://nodejs.org/) (npm/pnpm/yarn)
--   [Rust](https://www.rust-lang.org/tools/install)
--   [Ollama](https://ollama.com/) (must be running locally)
+---
+
+## Technology Stack
+
+Talos is built with a focus on performance and modern web standards:
+
+*   **Frontend**: React 18, TypeScript, Vite
+*   **Backend**: Rust (Tauri v2)
+*   **Database**: SQLite
+*   **AI Engine**: Ollama
+
+---
 
 ## Getting Started
 
-1.  **Clone the repository**:
+### Prerequisites
+
+Ensure the following components are installed on your system:
+
+1.  **Ollama**: Required for the AI model inference.
+2.  **Node.js** or **Bun**: Required for the frontend environment.
+3.  **Rust**: Required for compiling the application backend.
+
+### Installation
+
+1.  **Clone the Repository**
+
     ```bash
     git clone https://github.com/AleenaTahir1/Talos.git
     cd Talos
     ```
 
-2.  **Install dependencies**:
+2.  **Install Dependencies**
+
     ```bash
-    npm install
-    # or
     bun install
+    # or
+    npm install
     ```
 
-3.  **Run the development server**:
+3.  **Run Development Server**
+
     ```bash
-    npm run tauri dev
-    # or
     bun tauri dev
+    # or
+    npm run tauri dev
     ```
+
+---
 
 ## License
 
-MIT
+This project is distributed under the MIT License. See the `LICENSE` file for more information.
+
+## Author
+
+**Aleena Tahir**
+[GitHub Profile](https://github.com/AleenaTahir1)
