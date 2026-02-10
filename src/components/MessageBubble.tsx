@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import { Message } from '../types';
-import { Copy, Edit2, Check, X, Bot, User, Sparkles, Clock, MessageSquare } from 'lucide-react';
+import { Copy, Edit2, Check, X, Bot, User, Sparkles, MessageSquare } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';

@@ -1,11 +1,12 @@
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useTheme } from "./context/ThemeContext";
 import { Logo } from "./components/Logo";
 import { SettingsModal } from "./components/SettingsModal";
 import { MessageBubble, TypingIndicator } from "./components/MessageBubble";
 import { ModelSelector } from "./components/ModelSelector";
 import { TitleBar } from "./components/TitleBar";
+import { ConfirmationModal } from "./components/ConfirmationModal";
 import { useChat, useOllama } from "./hooks/useChat";
 import { useConversations } from "./hooks/useConversations";
 import { Trash2, MessageSquare, Plus } from "lucide-react";
@@ -13,6 +14,8 @@ import { Trash2, MessageSquare, Plus } from "lucide-react";
 function AppContent() {
   const { currentTheme, themeName } = useTheme();
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [chatToDelete, setChatToDelete] = useState<string | null>(null);
   const [message, setMessage] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -22,6 +25,7 @@ function AppContent() {
     conversations,
     createConversation,
     deleteConversation,
+    renameConversation,
     fetchConversations
   } = useConversations();
 
@@ -51,8 +55,19 @@ function AppContent() {
 
     const messageToSend = message;
     setMessage('');
+
+    // Auto-rename conversation on first message
+    if (messages.length === 0) {
+      const title = messageToSend.trim().slice(0, 50).replace(/\n/g, ' ');
+      try {
+        await renameConversation(selectedConversationId, title);
+      } catch (e) {
+        console.error('Failed to auto-rename conversation:', e);
+      }
+    }
+
     await sendMessage(messageToSend, selectedModel);
-    // Refresh conversations line in case updated_at changed
+    // Refresh conversations in case updated_at or title changed
     fetchConversations();
   };
 
@@ -67,11 +82,17 @@ function AppContent() {
 
   const handleDeleteChat = async (e: React.MouseEvent, id: string) => {
     e.stopPropagation();
-    if (confirm("Delete this conversation?")) {
-      await deleteConversation(id);
-      if (selectedConversationId === id) {
+    setChatToDelete(id);
+    setDeleteModalOpen(true);
+  };
+
+  const confirmDelete = async () => {
+    if (chatToDelete) {
+      await deleteConversation(chatToDelete);
+      if (selectedConversationId === chatToDelete) {
         setSelectedConversationId(null);
       }
+      setChatToDelete(null);
     }
   };
 
@@ -456,6 +477,15 @@ function AppContent() {
 
         {/* Settings Modal */}
         <SettingsModal isOpen={settingsOpen} onClose={() => setSettingsOpen(false)} />
+
+        {/* Delete Confirmation Modal */}
+        <ConfirmationModal
+          isOpen={deleteModalOpen}
+          onClose={() => setDeleteModalOpen(false)}
+          onConfirm={confirmDelete}
+          title="Delete Conversation"
+          message="Are you sure you want to delete this conversation? This action cannot be undone."
+        />
       </div>
     </div>
   );

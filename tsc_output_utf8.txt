@@ -1,0 +1,2 @@
+﻿src/App.tsx(2,18): error TS6133: 'AnimatePresence' is declared but its value is never read.
+src/components/MessageBubble.tsx(4,54): error TS6133: 'Clock' is declared but its value is never read.
